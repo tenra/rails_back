@@ -14,6 +14,7 @@ gem "puma", "~> 5.0"
 gem 'devise'
 gem 'devise_token_auth'
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'rack-cors'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]

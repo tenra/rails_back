@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
         #フロントのホスト
-        origins "http://127.0.0.1:8000"
+        origins ENV['MY_APP_FRONT_DOMAIN']
 
         resource "*",
                 headers: :any,
