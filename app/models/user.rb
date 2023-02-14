@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   attr_accessor :confirm_success_url, :redirect_url
+
+  # deviseの本人確認メールをdeliver_laterにする
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
