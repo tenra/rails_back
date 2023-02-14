@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
           :recoverable, :rememberable, :validatable, :trackable
   include DeviseTokenAuth::Concerns::User
+
+  attr_accessor :confirm_success_url, :redirect_url
 end
