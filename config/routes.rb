@@ -5,15 +5,16 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
+      resources :users
       resources :promotions
 
-      mount_devise_token_auth_for 'User', at: 'users', controllers: {
-        registrations: "api/v1/users/registrations",
-        confirmations: "api/v1/users/confirmations",
+      mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+        registrations: "api/v1/auth/registrations",
+        confirmations: "api/v1/auth/confirmations",
       }
       devise_scope :api_v1_user do
-        get 'users/base', to: 'users/registrations#base'
-        get 'users/profile', to: 'users/registrations#profile'
+        get 'auth/base', to: 'auth/registrations#base'
+        get 'auth/profile', to: 'auth/registrations#profile'
       end
 
     end

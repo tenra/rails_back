@@ -1,4 +1,4 @@
-class Api::V1::Users::RegistrationsController < DeviseTokenAuth::RegistrationsController
+class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
     before_action :authenticate_api_v1_user!, except: [:base, :create]
 
     def base

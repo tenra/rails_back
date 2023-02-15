@@ -1,4 +1,4 @@
-class Api::V1::Users::ConfirmationsController < DeviseTokenAuth::ConfirmationsController
+class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsController
     
     #devise_token_auth_monkey_patching
     def show
