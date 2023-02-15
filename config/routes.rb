@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
+      resources :promotions
+
       mount_devise_token_auth_for 'User', at: 'users', controllers: {
         registrations: "api/v1/users/registrations",
         confirmations: "api/v1/users/confirmations",
