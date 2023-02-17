@@ -12,10 +12,7 @@ class Api::V1::PromotionsController < ApplicationController
     end
     
     def create
-        # ユーザー認証
         promotion = @current_api_v1_user.promotions.build(promotion_params)
-        #promotion = Promotion.new(promotion_params)
-    
         if promotion.save
             render json: promotion
         else
