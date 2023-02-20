@@ -8,17 +8,12 @@ class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsCon
                 data: current_api_v1_user
             }
         else
-            render json: {
+            render status: 401, json: {
                 is_login: false,
                 message: "no current_user"
             }
         end
     end
-
-    def profile
-        render json: {data: current_api_v1_user}
-    end
-
 
     private
 

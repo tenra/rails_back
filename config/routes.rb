@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       }
       devise_scope :api_v1_user do
         get 'auth/base', to: 'auth/registrations#base'
-        get 'auth/profile', to: 'auth/registrations#profile'
       end
 
     end
