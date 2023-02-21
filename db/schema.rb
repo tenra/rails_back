@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_132224) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "name"
+    t.string "avatar"
     t.string "image"
     t.string "email"
     t.text "sentence"

@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
         #フロントのホスト
-        origins ENV['MY_APP_FRONT_DOMAIN'] ||= ""
+        origins ENV['FRONT_URL']
 
         resource "*",
                 headers: :any,

@@ -7,6 +7,7 @@
 #  id                     :bigint           not null, primary key
 #  admin                  :boolean          default(FALSE), not null
 #  allow_password_change  :boolean          default(FALSE)
+#  avatar                 :string
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -51,6 +52,9 @@ class User < ActiveRecord::Base
   has_many :promotions, dependent: :destroy
 
   attr_accessor :confirm_success_url, :redirect_url
+
+  #mount_uploader :avatar, AvatarUploader
+  mount_base64_uploader :avatar, AvatarUploader
 
   # deviseの本人確認メールをdeliver_laterにする
   def send_devise_notification(notification, *args)
